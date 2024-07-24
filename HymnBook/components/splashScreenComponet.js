@@ -1,37 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, Button, ActivityIndicator } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const SplashScreenComponent = () => {
   const [loading, setLoading] = useState(true);
-  const [isRegistered, setIsRegistered] = useState(false);
   const navigation = useNavigation();
 
   useEffect(() => {
-    const checkRegistration = async () => {
-      try {
-        const value = await AsyncStorage.getItem('isRegistered');
-        if (value !== null) {
-          setIsRegistered(true);
-        }
-      } catch (e) {
-        console.error(e);
-      }
+    // Simulate a loading time for the splash screen
+    const timer = setTimeout(() => {
       setLoading(false);
-    };
-    checkRegistration();
-  }, []);
+      navigation.replace('MainMenu');
+    }, 2000); // Adjust the time as necessary
 
-  const handleSignUp = () => {
-    // Navigate to sign-up screen
-    navigation.navigate('SignUp');
-  };
-
-  const handleMainMenu = () => {
-    // Navigate to main menu screen
-    navigation.navigate('MainMenu');
-  };
+    return () => clearTimeout(timer);
+  }, [navigation]);
 
   if (loading) {
     return (
@@ -44,12 +27,8 @@ const SplashScreenComponent = () => {
   return (
     <ImageBackground source={require('../assets/images/back.png')} style={styles.backgroundImage}>
       <View style={styles.overlay}>
-        <Text style={styles.welcomeText}>Mangwanani Munhu Washe</Text>
-        {isRegistered ? (
-          <Button title="Go to Main Menu" onPress={handleMainMenu} />
-        ) : (
-          <Button title="Sign Up" onPress={handleSignUp} />
-        )}
+        <Text style={styles.welcomeText}>Good Morning munhu washe</Text>
+        {/* Other components or content can go here */}
       </View>
     </ImageBackground>
   );
