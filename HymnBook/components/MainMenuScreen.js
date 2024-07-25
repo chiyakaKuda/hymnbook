@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity,Modal, FlatList, Pressable,SafeAreaView,StatusBar } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Modal, FlatList, Pressable, SafeAreaView, StatusBar, Alert, Share, Clipboard } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the FontAwesome icon set
 import { useNavigation } from '@react-navigation/native';
+
+
 
 const MainMenuScreen = () => {
   const [greeting, setGreeting] = useState('');
@@ -19,10 +21,12 @@ const MainMenuScreen = () => {
     }
   }, []);
 
+  
+
   const options = [
     { label: 'About', onPress: () =>navigation.navigate('About') },
-    { label: 'FAQs', onPress: () => console.log('FAQs') },
-    { label: 'Share', onPress: () => console.log('Share') },
+    { label: 'FAQs', onPress: () => navigation.navigate('FAQs') },
+    { label: 'Share', onPress: () => handleSharePress()},
     { label: 'Rate Us', onPress: () => console.log('Rate Us') },
     { label: 'Help', onPress: () => console.log('Help') },
     { label: 'Exit', onPress: () => console.log('Exit') }
@@ -32,7 +36,26 @@ const MainMenuScreen = () => {
     option.onPress();
     setModalVisible(false);
   };
-
+ 
+    const handleSharePress = async () => {
+      const appLink = 'https://play.google.com/store/apps/details?id=com.yourapp'; // Replace with your app's Play Store link
+      try {
+        // Copy link to clipboard
+        await Clipboard.setString(appLink);
+  
+        // Show a confirmation alert
+     // Alert.alert('Link Copied', 'The app link has been copied to your clipboard.');
+  
+        // Share the link
+        await Share.share({
+          message: `Check out this app: ${appLink}`,
+        });
+      } catch (error) {
+        console.error('Error sharing the app link:', error);
+      }
+    
+  };
+    
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
