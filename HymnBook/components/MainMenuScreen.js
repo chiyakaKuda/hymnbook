@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Modal, FlatList, Pressable, SafeAreaView, StatusBar, Alert, Share, Clipboard } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Modal, FlatList, Pressable, SafeAreaView, StatusBar, Alert, Share, Clipboard,Linking,BackHandler } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the FontAwesome icon set
 import { useNavigation } from '@react-navigation/native';
 
@@ -27,9 +27,9 @@ const MainMenuScreen = () => {
     { label: 'About', onPress: () =>navigation.navigate('About') },
     { label: 'FAQs', onPress: () => navigation.navigate('FAQs') },
     { label: 'Share', onPress: () => handleSharePress()},
-    { label: 'Rate Us', onPress: () => console.log('Rate Us') },
-    { label: 'Help', onPress: () => console.log('Help') },
-    { label: 'Exit', onPress: () => console.log('Exit') }
+    { label: 'Rate Us', onPress: () => handleRateUsPress() },
+    { label: 'Help', onPress: () => handleWhatsAppHelp() },
+    { label: 'Exit', onPress: () =>handleExitPress() }
   ];
 
   const handleOptionPress = (option) => {
@@ -55,6 +55,37 @@ const MainMenuScreen = () => {
       }
     
   };
+  
+  // Replace with your app's Play Store link
+  
+    const handleRateUsPress = async () => {
+      const playStoreLink = 'https://play.google.com/store/apps/details?id=com.yourapp';
+      try {
+        await Linking.openURL(playStoreLink);
+      } catch (error) {
+        console.error('Error opening the Play Store:', error);
+      }
+    };
+    const handleWhatsAppHelp = () => {
+      Linking.openURL('https://wa.me/+263718083975'); // Replace 'yourphonenumber' with your full phone number including country code
+    };
+    const handleExitPress = () => {
+      Alert.alert(
+        'Exit App',
+        'Are you sure you want to exit?',
+        [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Exit canceled'),
+            style: 'cancel',
+          },
+          {
+            text: 'OK',
+            onPress: () => BackHandler.exitApp(),
+          },
+        ],
+        { cancelable: false })
+    };
     
   return (
     <SafeAreaView style={styles.safeArea}>
