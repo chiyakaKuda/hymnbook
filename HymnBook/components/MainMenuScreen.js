@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity,Modal, FlatList, Pressable,SafeAreaView,StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the FontAwesome icon set
+import { useNavigation } from '@react-navigation/native';
+
 const MainMenuScreen = () => {
   const [greeting, setGreeting] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
+  const navigation =useNavigation();
 
   useEffect(() => {
     const currentHour = new Date().getHours();
@@ -17,7 +20,7 @@ const MainMenuScreen = () => {
   }, []);
 
   const options = [
-    { label: 'About', onPress: () => console.log('About') },
+    { label: 'About', onPress: () =>navigation.navigate('About') },
     { label: 'FAQs', onPress: () => console.log('FAQs') },
     { label: 'Share', onPress: () => console.log('Share') },
     { label: 'Rate Us', onPress: () => console.log('Rate Us') },
