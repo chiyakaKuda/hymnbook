@@ -108,7 +108,7 @@ const MainMenuScreen = () => {
      
         {/* Add more components for the main menu here */}
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('HymnsList')}>
             <Icon name="music" size={20} color="#fff" />
             <Text style={styles.buttonText}>Nziyo DzeShona</Text>
           </TouchableOpacity>
