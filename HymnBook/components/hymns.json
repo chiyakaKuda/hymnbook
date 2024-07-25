@@ -1,13 +1,56 @@
 [
     {
       "id": 1,
-      "title": "Hymn 1: Mutsvene, Mutsvene",
+      "title": "Hymn 1 Mutsvene, Mutsvene",
       "lyrics": "1. Mutsvene, Mutsvene,\n     Mwari weMasimba.\n     Mangwana, mangwana toimba\n     kwauri\n     Mutsvene, Mutsvene wetsitsi, namasimba\n     Mwari wengoni Mwari,\n     Mutsvene\n\n\n2. Mutsvene, Mutsvene!\n     vanokurumbidza,\n     Vanhu vako vose kunewe\n     kudenga\n     Ingirozi dzose pachigaro\n     chako\n     Dzinopfugama mberi kwauri.\n\n\n3. Mutsvene, Mutsvene, vanhu\n     verima\n     Vanhu vakaipa havakuoni.\n     Uri woga Mutsvene: hapasisina\n     mumwe;\n     Una masimba nezvirokazvo\n\n\n4. Mutsvene,Mutsvene,Mwari\n     wemasimba.\n     Anokurumbidza abasa ako\n     ose\n     Mutsvene, Mutsvene, wetsitsi\n     namasimba\n     Mwari wengoni, Mwari Mutsvene."
     },
     { 
       "id": 2,
-      "title": "Hymn 2: Mudaro",
+      "title": "Hymn 2 Kudzai Mambo",
+      "lyrics": "1. Kudzai Mambo ano utsvene\n     Ari kudenga ana masimba;\n     Ndiye nhoo yedu yakare kare\n     Chigare chake chakakurumbidzwa.\n\n\n2. Imbai masimba nengoni dzake;\n     Ari kudenga nenguo chena\n     Hasha dzake dzose dzinotinhira.\n     Anofamba zvake pachamupupuri.\n\n\n3. Ana masimba wakaisika,\n     Nyika nezvinhu zvose zvirimo;\n     Wakaitsigira nemurairo,\n     Wakaikombera nemvura yose\n\n\n4.Kufudza kwako kusingarehwi;\n    Kuri pamhepo napakupenya.\n    Kuri pamakomo napamakan’a,\n    Kuri pane mvura napane dova.\n\n\n5. Isu vaduku hatine simba,\n    Tinotarira chete kwauri;\n    Tsitsi dzako dzose dzisingaperi.\n    Hama yakanaka nomununuri.\n\n\n6. Una masimba norudo rwose:\n     Dzinoimbira dzose kudenga\n     Nesuwo venyika tinoimbira.\n     Tinokurumbidza kusingaperi."
+    },
+    { 
+      "id": 3,
+      "title": "Hymn 3 Imi Mose Muri Pasi",
       "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
-    }
+    },
+    { 
+      "id": 4,
+      "title": "Hymn 4 Mwari Uri Zuva Redu",
+      "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+    },
+    { 
+      "id": 5,
+      "title": "Hymn 5 Kudza Jehova Mwari",
+      "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+    },
+    { 
+      "id": 6,
+      "title": "Hymn 6 Ngatimukudze Mwari",
+      "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+    },{ 
+        "id": 7,
+        "title": "Hymn 7 Mukudzei Iye Mwari",
+        "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+      },{ 
+        "id": 8,
+        "title": "Hymn 8 Jehova Una Masimba",
+        "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+      },{ 
+        "id": 9,
+        "title": "Hymn 9 Ngatitende kuJehova ",
+        "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+      },
+      { 
+      "id": 10,
+      "title": "Hymn 10 Wakasika Zvose Zvinhu",
+      "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+    },
+    { 
+        "id": 11,
+        "title": "Hymn 11 Ndinoshamiswa Kwazvo",
+        "lyrics": "O Lord my God! When I in awesome wonder\nConsider all the works Thy hand hath made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed."
+      }
+
   ]
   
