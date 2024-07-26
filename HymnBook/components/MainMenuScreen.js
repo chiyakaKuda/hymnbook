@@ -94,7 +94,7 @@ const MainMenuScreen = () => {
       <View style={styles.container}>
         {/* Title Bar */}
         <View style={styles.titleBar}>
-          <Text style={styles.title}>AAC HYMNS</Text>
+          <Text style={styles.title}>African Apostolic Church Hymns & Books</Text>
           <TouchableOpacity onPress={() => setModalVisible(true)}>
             <Icon name="ellipsis-v" size={20} color="#fff" />
           </TouchableOpacity>
@@ -125,8 +125,8 @@ const MainMenuScreen = () => {
             <Text style={styles.buttonText}>Nziyo dzeXhosa</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {}}>
-            <Icon name="shopping-cart" size={20} color="#fff" />
-            <Text style={styles.buttonText}>Shop</Text>
+            <Icon name="shopping-cart" size={25} color="#fff" />
+            <Text style={styles.buttonText}>Our Shop</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {}}>
             <Icon name="book" size={20} color="#fff" />
@@ -190,6 +190,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    height: 50,
+    margin:-4,
     paddingVertical: 10,
     paddingHorizontal: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -221,12 +223,12 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#434A42',
     paddingVertical: 10,
     paddingHorizontal: 20,
     margin: 5,
-    borderRadius: 5,
-    width: '45%',
+    borderRadius: 20,
+    width: '30%',
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -235,10 +237,12 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 }, // Shadow offset
     shadowOpacity: 0.3, // Shadow opacity
     shadowRadius: 4, // Shadow blur radius
+
   },
+ 
   buttonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 20,
     textAlign: 'center',
     marginLeft: 10, // Spacing between icon and text
   },

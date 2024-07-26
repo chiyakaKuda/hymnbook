@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#E1CA96',
   },
   image: {
     width: '100%',
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
     padding: 10,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#434A42',
     borderRadius: 5,
   },
   title: {
@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 20,
     marginBottom: 5,
+   
   },
   sectionTerms:{
     fontSize: 16,
@@ -154,6 +155,7 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 16,
     lineHeight: 22,
+    
   },
 });
 

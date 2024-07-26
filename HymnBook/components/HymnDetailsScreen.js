@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import hymnsData from './hymns.json';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const HymnDetailsScreen = () => {
   const route = useRoute();
@@ -39,18 +40,14 @@ const HymnDetailsScreen = () => {
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <PanGestureHandler onGestureEvent={({ nativeEvent }) => {
-        if (nativeEvent.translationX > 0) {
-          onSwipeRight();
-        } else {
-          onSwipeLeft();
-        }
-      }}>
-        <ScrollView>
+     
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 8 }}>
           <Text style={styles.title}>{hymn.title}</Text>
           <Text style={styles.lyrics}>{hymn.lyrics}</Text>
-        </ScrollView>
-      </PanGestureHandler>
+       
+   
+        
+      </ScrollView>
       <View style={styles.navigationButtons}>
         <TouchableOpacity onPress={onSwipeRight} disabled={currentHymnId <= 1}>
           <Ionicons name="arrow-back-circle" size={50} color={currentHymnId <= 1 ? '#ACA885' : '#434A42'} />
@@ -93,4 +90,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 16,
   },
+  
 });

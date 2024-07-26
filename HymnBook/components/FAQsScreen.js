@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 const FAQsScreen = ({ navigation }) => {
   // Sample FAQ data
   const faqs = [
-    { question: "What is the AAC HYMNS Application?", answer: "The AAC HYMNS Application is a comprehensive collection of hymns for The African Apostolic Church. It provides easy access to hymns in multiple languages." },
+    { question: "What is the African Apostolic Church Hymns (ACC HYMNS)Application?", answer: "The AAC HYMNS Application is a comprehensive collection of hymns for The African Apostolic Church. It provides easy access to hymns in multiple languages." },
     { question: "How do I use the app?", answer: "You can navigate through the app using the main menu. Select a language or category to view the available hymns." },
     { question: "Do I need an internet connection?", answer: "No, the app is designed to work offline. Once hymns are downloaded, you can access them without an internet connection." },
     { question: "How can I provide feedback?", answer: "You can provide feedback by contacting us through the 'About' page or sending an email to kchiyaka1@gmail.com." },
@@ -36,10 +36,12 @@ const FAQsScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
+    backgroundColor: '#E1CA96'
   },
   container: {
     flex: 1,
     padding: 20,
+  
   },
   header: {
     flexDirection: 'row',

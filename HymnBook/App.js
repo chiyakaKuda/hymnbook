@@ -20,10 +20,42 @@ const App = () => {
             component={MainMenuScreen}
             options={{ headerShown: false }} // Hide the default header
           />
-           <Stack.Screen name="About" component={AboutScreen} />
-           <Stack.Screen name="FAQs" component={FAQsScreen} />
-           <Stack.Screen name="HymnsList" component={HymnsListScreen} options={{ title: 'Shona Hymns' }} />
-           <Stack.Screen name="HymnDetails" component={HymnDetailsScreen} options={{ title: 'Shona Hymns'}}/>
+           <Stack.Screen name="About" component={AboutScreen} options={{ headerStyle: {
+            backgroundColor: '#434A42', // Set your desired background color here
+          },headerTintColor: '#FFFFFF', // Set your desired text color here
+          headerTitleStyle: {
+            fontWeight: 'bold', // Additional styling for the title text
+            fontSize: 20,       // Set the font size of the title
+          }}} />
+           <Stack.Screen name="FAQs" component={FAQsScreen} options={{ title: 'FAQs', headerStyle: {
+            backgroundColor: '#434A42', // Set your desired background color here
+          },headerTintColor: '#FFFFFF', // Set your desired text color here
+          headerTitleStyle: {
+            fontWeight: 'bold', // Additional styling for the title text
+            fontSize: 20,       // Set the font size of the title
+          }}} />
+           <Stack.Screen name="HymnsList" component={HymnsListScreen} options={{ title: 'Shona Hymns', headerStyle: {
+            backgroundColor: '#434A42', // Set your desired background color here
+          },headerTintColor: '#FFFFFF', // Set your desired text color here
+          headerTitleStyle: {
+            fontWeight: 'bold', // Additional styling for the title text
+            fontSize: 20,       // Set the font size of the title
+          }, }}/>
+           <Stack.Screen
+        name="HymnDetails"
+        component={HymnDetailsScreen}
+        options={{
+          title: 'Shona Hymns',
+          headerStyle: {
+            backgroundColor: '#434A42', // Set your desired background color here
+          },
+          headerTintColor: '#FFFFFF', // Set your desired text color here
+          headerTitleStyle: {
+            fontWeight: 'bold', // Additional styling for the title text
+            fontSize: 20,       // Set the font size of the title
+          },
+        }}
+      />
           
 
         
