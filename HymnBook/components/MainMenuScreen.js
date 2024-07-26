@@ -93,12 +93,14 @@ const MainMenuScreen = () => {
     <ImageBackground source={require('../assets/images/back.png')} style={styles.backgroundImage}>
       <View style={styles.container}>
         {/* Title Bar */}
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
         <View style={styles.titleBar}>
           <Text style={styles.title}>African Apostolic Church Hymns & Books</Text>
-          <TouchableOpacity onPress={() => setModalVisible(true)}>
+          
             <Icon name="ellipsis-v" size={20} color="#fff" />
-          </TouchableOpacity>
+          
         </View>
+        </TouchableOpacity>
 
 
        {/* Overlay for Greeting Text */}
