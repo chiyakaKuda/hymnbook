@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Modal, FlatList, Pressable, SafeAreaView, StatusBar, Alert, Share, Clipboard,Linking,BackHandler } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Modal, FlatList, Pressable, SafeAreaView, StatusBar, Alert, Clipboard,Share,Linking,BackHandler } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the FontAwesome icon set
 import { useNavigation } from '@react-navigation/native';
-import Clipboard from '@react-native-clipboard/clipboard';
+//import Clipboard from '@react-native-clipboard/clipboard';
 
 
 
@@ -135,7 +135,7 @@ const MainMenuScreen = () => {
             <Icon name="book" size={20} color="#fff" />
             <Text style={styles.buttonText}>Devine Books</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Music')}>
             <Icon name="music" size={20} color="#fff" />
             <Text style={styles.buttonText}>Music</Text>
           </TouchableOpacity>
