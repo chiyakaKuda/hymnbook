@@ -16,7 +16,7 @@ const MusicListScreen = () => {
   const renderItem = ({ item }) => {
     const isFavorite = favorites.includes(item.id);
     return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('Player', { title: item.title, artist: item.artist, url: item.url })}>
       <View style={styles.musicItem}>
       <FontAwesome name="headphones" size={30} color="#E1CA96" style={styles.musicIcon} />
     

@@ -8,6 +8,8 @@ import HymnsListScreen from './components/HymnsListScreen';
 import HymnDetailsScreen from './components/HymnDetailsScreen';
 import MusicListScreen from './components/MusicListScreen';
 
+
+
 const Stack = createStackNavigator();
 
 
@@ -26,6 +28,7 @@ const App = () => {
             component={MusicListScreen}
             options={{ headerShown: false }} // Hide the default header
           />
+         
            <Stack.Screen name="About" component={AboutScreen} options={{ headerStyle: {
             backgroundColor: '#434A42', // Set your desired background color here
           },headerTintColor: '#FFFFFF', // Set your desired text color here
