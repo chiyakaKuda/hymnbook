@@ -31,20 +31,35 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: '#626C66',
   },
   header: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 16,
+    color: '#E1CA96', // Softer black for text
+    marginBottom: 20,
+    textAlign: 'center',
+    letterSpacing: 1,
   },
   bookItem: {
     padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    marginBottom: 8,
+    padding: 20,
+    marginVertical: 10,
+    marginHorizontal: 10,
+    backgroundColor: '#E1CA96',
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   bookTitle: {
-    fontSize: 18,
+    fontSize: 22,
+    color: '#434A42',
+    fontWeight: '500',
+    fontFamily: 'sans-serif-medium',
   },
 });
 

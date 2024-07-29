@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet,ScrollView } from 'react-native';
 
 const BookContentsScreen = ({ route, navigation }) => {
   const { book } = route.params;
@@ -24,10 +24,12 @@ const BookContentsScreen = ({ route, navigation }) => {
           <Text style={styles.menuButtonText}>Chapters</Text>
         </TouchableOpacity>
       </View>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 8 }}>
       <View style={styles.content}>
         <Text style={styles.chapterTitle}>{selectedChapter.title}</Text>
         <Text style={styles.chapterContent}>{selectedChapter.content}</Text>
       </View>
+      </ScrollView>
     </View>
   );
 };
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: '#E1CA96',
   },
   titleBar: {
     flexDirection: 'row',
@@ -49,14 +51,17 @@ const styles = StyleSheet.create({
   bookTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#333',
   },
   menuButton: {
     padding: 8,
-    backgroundColor: '#ddd',
+    backgroundColor: '#333',
     borderRadius: 5,
   },
   menuButtonText: {
     fontSize: 16,
+    color:'white',
+
   },
   content: {
     marginTop: 16,
@@ -64,10 +69,13 @@ const styles = StyleSheet.create({
   chapterTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#434A42',
   },
   chapterContent: {
     fontSize: 16,
     marginTop: 8,
+    color: '#434A42',
+    lineHeight: 24,
   },
   errorText: {
     fontSize: 16,

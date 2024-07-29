@@ -4,7 +4,12 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import hymnsData from './hymns.json';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+
+
+
 
 const HymnDetailsScreen = () => {
   const route = useRoute();
@@ -49,12 +54,12 @@ const HymnDetailsScreen = () => {
         
       </ScrollView>
       <View style={styles.navigationButtons}>
-        <TouchableOpacity onPress={onSwipeRight} disabled={currentHymnId <= 1}>
-          <Ionicons name="arrow-back-circle" size={50} color={currentHymnId <= 1 ? '#ACA885' : '#434A42'} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onSwipeLeft} disabled={currentHymnId >= hymnsData.length}>
-          <Ionicons name="arrow-forward-circle" size={50} color={currentHymnId >= hymnsData.length ? '#ACA885' : '#434A42'} />
-        </TouchableOpacity>
+      <TouchableOpacity onPress={onSwipeRight} disabled={currentHymnId <= 1} style={styles.iconContainer}>
+      <FontAwesome name="arrow-left" size={30} color={currentHymnId <= 1 ? '#ACA885' : '#434A42'} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={onSwipeLeft} disabled={currentHymnId >= hymnsData.length} style={styles.iconContainer}>
+      <FontAwesome name="arrow-right" size={30} color={currentHymnId >= hymnsData.length ? '#ACA885' : '#434A42'} />
+      </TouchableOpacity>
       </View>
     </GestureHandlerRootView>
   );
@@ -90,5 +95,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 16,
   },
+  icon:{
+    marginBottom:17,
+  }
   
 });
