@@ -127,14 +127,15 @@ const MainMenuScreen = () => {
             <Icon name="globe" size={20} color="#fff" />
             <Text style={styles.buttonText}>Nziyo dzeXhosa</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
-            <Icon name="shopping-cart" size={25} color="#fff" />
-            <Text style={styles.buttonText}>Our Shop</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('DivineBooks')}>
             <Icon name="book" size={20} color="#fff" />
-            <Text style={styles.buttonText}>Devine Books</Text>
+            <Text style={styles.buttonText}>Divine Books</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <Icon name="shopping-cart" size={20} color="#fff" />
+            <Text style={styles.buttonText}>The AAC Shop</Text>
+          </TouchableOpacity>
+          
          
         </View>
         {/* Modal for Options */}
