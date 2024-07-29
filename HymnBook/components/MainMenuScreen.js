@@ -135,10 +135,7 @@ const MainMenuScreen = () => {
             <Icon name="book" size={20} color="#fff" />
             <Text style={styles.buttonText}>Devine Books</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Music')}>
-            <Icon name="music" size={20} color="#fff" />
-            <Text style={styles.buttonText}>Music</Text>
-          </TouchableOpacity>
+         
         </View>
         {/* Modal for Options */}
         <Modal

@@ -6,7 +6,7 @@ import AboutScreen from './components/AboutScreen';
 import FAQsScreen from './components/FAQsScreen';
 import HymnsListScreen from './components/HymnsListScreen';
 import HymnDetailsScreen from './components/HymnDetailsScreen';
-import MusicListScreen from './components/MusicListScreen';
+
 
 
 
@@ -23,11 +23,7 @@ const App = () => {
             component={MainMenuScreen}
             options={{ headerShown: false }} // Hide the default header
           />
-          <Stack.Screen
-            name="Music"
-            component={MusicListScreen}
-            options={{ headerShown: false }} // Hide the default header
-          />
+  
          
            <Stack.Screen name="About" component={AboutScreen} options={{ headerStyle: {
             backgroundColor: '#434A42', // Set your desired background color here
