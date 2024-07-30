@@ -14,7 +14,7 @@ const HymnsListScreen = () => {
   const handleSearch = (query) => {
     setSearchQuery(query);
 
-    if (query === '') {
+    if (query === '' ) {
       setFilteredHymns(hymnsData);
       return;
     }

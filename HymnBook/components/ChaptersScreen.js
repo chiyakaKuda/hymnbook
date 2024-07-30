@@ -1,20 +1,22 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import booksData from './books.json';
 
-const ChaptersScreen = ({ route, navigation }) => {
+const Chapters = ({ navigation, route }) => {
   const { chapters } = route.params;
+
+  const handleChapterSelect = (index) => {
+    navigation.navigate('BookContents', { chapters, currentChapterIndex: index });
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Chapters</Text>
       <FlatList
         data={chapters}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('ChapterContent', { content: item.content })}>
-            <View style={styles.chapterItem}>
-              <Text style={styles.chapterTitle}>{item.title}</Text>
-            </View>
+        renderItem={({ item, index }) => (
+          <TouchableOpacity onPress={() => handleChapterSelect(index)} style={styles.chapterItem}>
+            <Text style={styles.chapterText}>{item.title}</Text>
           </TouchableOpacity>
         )}
       />
@@ -26,21 +28,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
   },
   chapterItem: {
-    padding: 16,
+    padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
-  chapterTitle: {
+  chapterText: {
     fontSize: 18,
   },
 });
 
-export default ChaptersScreen;
+export default Chapters;
