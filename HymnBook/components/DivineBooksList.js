@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+// DivineBooksScreen.js
+import React from 'react';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, Alert } from 'react-native'
 import booksData from './books.json';
 
-const DivineBooksList = ({ navigation }) => {
-  const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    setBooks(booksData.books);
-  }, []);
+
+
+const DivineBooksScreen = ({ navigation }) => {
+  if (!booksData || booksData.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.errorText}>No books available.</Text>
+      </View>
+    );
+  }
+
+  const handleBookSelect = (book) => {
+    navigation.navigate('Chapters', { book });
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Divine Books</Text>
       <FlatList
-        data={books}
-        keyExtractor={(item) => item.id}
+        data={booksData}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('BookContents', { book: item })}>
-            <View style={styles.bookItem}>
-              <Text style={styles.bookTitle}>{item.title}</Text>
-            </View>
+          <TouchableOpacity onPress={() => handleBookSelect(item)} style={styles.bookItem}>
+            <Text style={styles.bookTitle}>{item.title}</Text>
           </TouchableOpacity>
         )}
       />
@@ -31,36 +38,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#626C66',
-  },
-  header: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#E1CA96', // Softer black for text
-    marginBottom: 20,
-    textAlign: 'center',
-    letterSpacing: 1,
   },
   bookItem: {
-    padding: 16,
-    marginBottom: 8,
-    padding: 20,
-    marginVertical: 10,
-    marginHorizontal: 10,
-    backgroundColor: '#E1CA96',
-    borderRadius: 30,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
   bookTitle: {
-    fontSize: 22,
-    color: '#434A42',
-    fontWeight: '500',
-    fontFamily: 'sans-serif-medium',
+    fontSize: 18,
+  },
+  errorText: {
+    fontSize: 16,
+    color: 'red',
+    textAlign: 'center',
+    marginTop: 20,
   },
 });
 
-export default DivineBooksList;
+export default DivineBooksScreen;

@@ -1,22 +1,22 @@
+// ChaptersScreen.js
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import booksData from './books.json';
 
-const Chapters = ({ navigation, route }) => {
-  const { chapters } = route.params;
+const ChaptersScreen = ({ route, navigation }) => {
+  const { book } = route.params;
 
   const handleChapterSelect = (index) => {
-    navigation.navigate('BookContents', { chapters, currentChapterIndex: index });
+    navigation.navigate('BookContents', { book, currentChapterIndex: index });
   };
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={chapters}
+        data={book.chapters}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item, index }) => (
           <TouchableOpacity onPress={() => handleChapterSelect(index)} style={styles.chapterItem}>
-            <Text style={styles.chapterText}>{item.title}</Text>
+            <Text style={styles.chapterTitle}>{item.title}</Text>
           </TouchableOpacity>
         )}
       />
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
-  chapterText: {
+  chapterTitle: {
     fontSize: 18,
   },
 });
 
-export default Chapters;
+export default ChaptersScreen;
